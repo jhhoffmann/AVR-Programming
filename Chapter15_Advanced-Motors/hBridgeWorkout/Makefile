@@ -4,8 +4,8 @@
 ##########    Check these every time you start a new project    ##########
 ##########------------------------------------------------------##########
 
-MCU   = atmega168p
-F_CPU = 1000000UL  
+MCU   = atmega328p
+F_CPU = 16000000UL
 BAUD  = 9600UL
 ## Also try BAUD = 19200 or 38400 if you're feeling lucky.
 
@@ -157,6 +157,10 @@ flash_arduinoISP: flash
 flash_109: PROGRAMMER_TYPE = avr109
 flash_109: PROGRAMMER_ARGS = -b 9600 -P /dev/ttyUSB0
 flash_109: flash
+
+flash_arduino: PROGRAMMER_TYPE = arduino
+flash_arduino: PROGRAMMER_ARGS = -b 115200 -P /dev/ttyUSB0 -D
+flash_arduino: flash
 
 ##########------------------------------------------------------##########
 ##########       Fuse settings and suitable defaults            ##########
