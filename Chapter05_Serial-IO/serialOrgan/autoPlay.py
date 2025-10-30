@@ -26,14 +26,18 @@ if __name__ == "__main__":
   s.flush()                     
   ## flush clears the buffer so that we're starting fresh
   ## More on serial buffers later.
-
+  
+  input("Press enter for next demo\n")
   ## An intentional example.  You can use this for playing music on purpose.
-  playString("f g h j k l ; ]'[", s)
-  input("Press enter for next demo\n")
+  playString("                              a s d f g h j k l ; ]'[", s)
 
-  ## A fun / stupid example.  You can just type stuff and see what comes out.
-  playString("hello there, this is a random string turned into 'music'", s)
   input("Press enter for next demo\n")
+  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #  +  +  +  #
+  playString("]                       aa ss dd ff ggggg ggggg hh hh hh hh ggggggggggg hh hh hh hh ggggggggggg ff ff ff ff ddddd ddddd ss ss ss ss aaaaaaaaaaa [", s)
+
+  #input("Press enter for next demo\n")
+  ## A fun / stupid example.  You can just type stuff and see what comes out.
+  #playString("hello there, this is a random string turned into 'music'", s)
 
   ## Website no longer alive... skipping:
   ## A really frivolous example.  Play websites!
@@ -45,6 +49,7 @@ if __name__ == "__main__":
   #songText = contentFilter.findall(songSite)[0]
   #playString(songText, s)
  
+  #input("Press enter for next demo\n")
   ## Or interactive
-  mySong = input("\nType in your own song: ")
-  playString(mySong, s)
+  #mySong = input("\nType in your own song: ")
+  #playString(mySong, s)
