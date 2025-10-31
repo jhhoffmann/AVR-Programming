@@ -3,7 +3,8 @@
         {
             "name": "AVR 168",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../../AVR-Programming-Library/**"
             ],
             "cStandard": "c11",
             "cppStandard": "gnu++14",
@@ -18,7 +19,9 @@
         {
             "name": "AVR 328p Arduino",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../../AVR-Programming-Library/**"
+
             ],
             "cStandard": "c11",
             "cppStandard": "gnu++14",

@@ -16,13 +16,30 @@ int main(void) {
   // -------- Inits --------- //
   LED_DDR = 0xff;                            /* set up LEDs for output */
   initUSART();
-  printString("Hello World!\r\n");                          /* to test */
+  printString("Type into serial console.\r\n");             /* to test */
 
   // ------ Event loop ------ //
   while (1) {
 
     serialCharacter = receiveByte();
+#define VERBOSE 0
+#if VERBOSE
+    printByte(serialCharacter);
+    printString(" 0b");
+    printBinaryByte(serialCharacter);
+    printString(" 0x");
+    printHexByte(serialCharacter);
+    printString(" '");
     transmitByte(serialCharacter);
+    printString("'\r\n");
+#else
+    transmitByte(serialCharacter);
+    if (serialCharacter == 0x0D)
+    {
+      // add a LF after a CR
+      transmitByte(0x0A);
+    }
+#endif
     LED_PORT = serialCharacter;
                            /* display ascii/numeric value of character */
 
