@@ -1,0 +1,8 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/avr-gcc",
+    "files.associations": {
+        "*.S": "arm",
+        "io.h": "c",
+        "iom168.h": "c"
+    }
+}

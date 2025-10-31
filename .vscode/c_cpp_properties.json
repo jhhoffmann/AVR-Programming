@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "AVR 168",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-mmcu=atmega168",
+                "-DF_CPU=1000000UL",
+                "-DBAUD=9600UL",
+                "-Os"
+            ]
+        },
+        {
+            "name": "AVR 328p Arduino",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                "-DF_CPU=16000000UL",
+                "-DBAUD=9600UL",
+                "-Os"
+            ]
+        }
+    ],
+    "version": 4
+}
