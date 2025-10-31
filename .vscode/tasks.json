@@ -28,7 +28,7 @@
                 "make flash_arduino",
                 "make disassemble",
                 "make squeaky_clean",
-                "make size",
+                "make clean",
                 "make debug",
             ],
             "default": "make all"
