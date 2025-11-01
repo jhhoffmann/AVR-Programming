@@ -20,7 +20,7 @@ print ("Boss Button")
 
 while(1):                       # Sit and wait forever
     response = sp.read(1)       # get one byte
-    if response == "O":
+    if response == b"O":
         print ("Got OK Byte.  Waiting for button press.")
     elif response == b"X":
         print ("Got Boss Byte!  Alarm!")
