@@ -19,7 +19,7 @@ if __name__ == "__main__":
     PORT = '/dev/ttyUSB0' # update to whatever port is listed in serial.tools.list_ports
     BAUDRATE =  9600
     TIMEOUT = None
-    SCREEN_WIDTH = 80
+    SCREEN_WIDTH = 132
 
     ## Take command-line arguments to override defaults above
     import sys

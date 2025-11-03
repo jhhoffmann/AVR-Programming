@@ -24,9 +24,14 @@ int main(void) {
   // -------- Inits --------- //
   initUSART();
   initFreerunningADC();
+  LED_DDR = 0xff;
+  uint8_t sample;
+
   // ------ Event loop ------ //
   while (1) {
-    transmitByte(ADCH);       /* transmit the high byte, left-adjusted */
+    sample = ADCH;
+    transmitByte(sample);       /* transmit the high byte, left-adjusted */
+    LED_PORT = sample;
     _delay_ms(SAMPLE_DELAY);
   }                                                  /* End event loop */
   return 0;                            /* This line is never reached */
