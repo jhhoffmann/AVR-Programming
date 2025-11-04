@@ -17,10 +17,10 @@
             ]
         },
         {
-            "name": "AVR 328p Arduino",
+            "name": "AVR 328p",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/../../AVR-Programming-Library/**"
+                "${workspaceFolder}/../../AVR-Programming-Library-328p/**"
 
             ],
             "cStandard": "c11",

@@ -26,6 +26,7 @@
                 "make all",
                 "make flash",
                 "make flash_arduino",
+                "make flash_arduinoISP",
                 "make disassemble",
                 "make squeaky_clean",
                 "make clean",
