@@ -9,10 +9,10 @@
 
 ISR(PCINT2_vect) {              /* Run every time button state changes */
   if (bit_is_clear(BUTTON_PIN, BUTTON)) {
-    LED_PORT |= (1 << LED1);
+    LED_PORT |= 0b00011000;
   }
   else {
-    LED_PORT &= ~(1 << LED1);
+    LED_PORT &= ~(0b00011000);
   }
 }
 
@@ -32,7 +32,7 @@ int main(void) {
   while (1) {
 
     _delay_ms(200);
-    LED_PORT ^= (1 << LED0);
+    LED_PORT ^= (0b10000001);
 
   }                                                  /* End event loop */
   return 0;                            /* This line is never reached */

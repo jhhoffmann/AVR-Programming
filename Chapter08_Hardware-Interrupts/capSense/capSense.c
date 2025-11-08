@@ -10,7 +10,6 @@
 #include "USART.h"
 
 #define SENSE_TIME   50
-#define THRESHOLD    12000
 
 // -------  Global Variables ---------- //
 volatile uint16_t chargeCycleCount;
@@ -53,13 +52,12 @@ int main(void) {
     sei();                            /* start up interrupts, counting */
     _delay_ms(SENSE_TIME);
     cli();                                                     /* done */
-    if (chargeCycleCount < THRESHOLD) {
-      LED_PORT = 0xff;
-    }
-    else {
-      LED_PORT = 0;
-    }
+    LED_PORT = ~((1 << (chargeCycleCount / 1600)) - 1);
     printWord(chargeCycleCount);                    /* for fine tuning */
+    printString("\t\t");
+    printWord(chargeCycleCount / 1600);
+    printString("\t\t");
+    printBinaryByte(LED_PORT);
     printString("\r\n");
 
   }                                                  /* End event loop */

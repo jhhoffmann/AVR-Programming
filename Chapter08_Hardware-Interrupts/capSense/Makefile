@@ -5,7 +5,8 @@
 ##########------------------------------------------------------##########
 
 MCU   = atmega168
-F_CPU = 1000000UL
+# rebuild AVR-Programming-Library with this value as well
+F_CPU = 8000000UL
 BAUD  = 9600UL
 ## Also try BAUD = 19200 or 38400 if you're feeling lucky.
 
