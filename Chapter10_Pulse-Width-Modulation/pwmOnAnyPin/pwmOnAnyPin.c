@@ -4,8 +4,9 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include "pinDefines.h"
+#include "gamma_2.h"
 
-#define DELAY 3
+#define DELAY 8
 
 volatile uint8_t brightnessA;
 volatile uint8_t brightnessB;
@@ -21,15 +22,15 @@ static inline void initTimer0(void) {
 }
 
 ISR(TIMER0_OVF_vect) {
-  LED_PORT = 0xff;
+  LED_PORT = 0b11111111;
   OCR0A = brightnessA;
   OCR0B = brightnessB;
 }
 ISR(TIMER0_COMPA_vect) {
-  LED_PORT &= 0b11110000;                    /* turn off low four LEDs */
+  LED_PORT &= 0b10101010;                  /* turn off every other LED */
 }
 ISR(TIMER0_COMPB_vect) {
-  LED_PORT &= 0b00001111;                   /* turn off high four LEDs */
+  LED_PORT &= 0b01010101;                   /* turn off the other LEDs */
 }
 
 int main(void) {
@@ -44,16 +45,16 @@ int main(void) {
 
     for (i = 0; i < 255; i++) {
       _delay_ms(DELAY);
-      brightnessA = i;
-      brightnessB = 255 - i;
+      brightnessA = gamma_2[i];
+      brightnessB = gamma_2[255 - i];
     }
 
     for (i = 254; i > 0; i--) {
       _delay_ms(DELAY);
-      brightnessA = i;
-      brightnessB = 255 - i;
+      brightnessA = gamma_2[i];
+      brightnessB = gamma_2[255 - i];
     }
 
   }                                                  /* End event loop */
-  return 0;                            /* This line is never reached */
+  return 0;                              /* This line is never reached */
 }
