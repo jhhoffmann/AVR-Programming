@@ -22,8 +22,15 @@ int main(void) {
   while (1) {
 
     serialCharacter = receiveByte();
+#define MULTI 0
 #define VERBOSE 0
-#if VERBOSE
+#if MULTI
+    char c;
+    for (c = serialCharacter; c < serialCharacter + 4; c++)
+    {
+      transmitByte(c);
+    }
+#elif VERBOSE
     printByte(serialCharacter);
     printString(" 0b");
     printBinaryByte(serialCharacter);
